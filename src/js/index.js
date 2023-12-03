@@ -1,4 +1,58 @@
-import response from './data.json';
+// import response from './data.json';
+
+const response = [
+  {
+    location_name: 'Central Hub',
+    location_id: 1,
+    main_statistics: {
+      qty_new_users: 15,
+      qty_used_chips: 120,
+      qty_created_chips: 140,
+    },
+    worker_statistics: [
+      {
+        worker_name: 'Alice Johnson',
+        qty_added_worker: 5,
+        worker_username: 'alice_j',
+        qty_used_chips: 60,
+        qty_created_chips: 70,
+      },
+      {
+        worker_name: 'Bob Smith',
+        qty_added_worker: 10,
+        worker_username: 'bob_smith88',
+        qty_used_chips: 60,
+        qty_created_chips: 70,
+      },
+    ],
+  },
+  {
+    location_name: 'East Wing',
+    location_id: 2,
+    main_statistics: {
+      qty_new_users: 10,
+      qty_used_chips: 100,
+      qty_created_chips: 110,
+    },
+    worker_statistics: [
+      {
+        worker_name: 'Carol White',
+        qty_added_worker: 6,
+        worker_username: 'cwhite',
+        qty_used_chips: 50,
+        qty_created_chips: 55,
+      },
+      {
+        worker_name: 'Dave Brown',
+        qty_added_worker: 4,
+        worker_username: 'daveb2023',
+        qty_used_chips: 50,
+        qty_created_chips: 55,
+      },
+    ],
+  },
+];
+
 import Chart from 'chart.js/auto';
 
 const newUserEl = document.getElementById('newUsers').getContext('2d');
