@@ -1,4 +1,3 @@
-import { createCards, clearMarkup, addMarkup } from '../markup/markup';
 import response from './data.json';
 import Chart from 'chart.js/auto';
 
