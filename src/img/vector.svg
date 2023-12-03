@@ -1,0 +1,8 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+    <defs>
+        <symbol id="updown" viewBox="0 0 12 8">
+            <path d="M11.09 0.589844L6.5 5.16984L1.91 0.589844L0.5 1.99984L6.5 7.99984L12.5 1.99984L11.09 0.589844Z" fill="black"></path>
+        </symbol>
+    </defs>
+</svg>

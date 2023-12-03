@@ -11,89 +11,118 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <div class="container">
-      <header class="header">
-        <div class="type-btns">
-          <button class="type-btn active" type="button" id="diags">
-            Діаграми
-          </button>
-          <button class="type-btn" type="button" id="tables">Таблиці</button>
-        </div>
-        <ul class="time-btns">
-          <li>
-            <button class="time-btn time-active" type="button">Сьогодні</button>
-          </li>
-          <li><button class="time-btn" type="button">Тиждень</button></li>
-          <li><button class="time-btn" type="button">Місяць</button></li>
-          <li>
-            <button class="calendar-btn" type="button">
-              <svg class="humb-menu" width="16" height="16">
-                <use href="./img/left-icon.svg#calendar-icon"></use>
-              </svg>
-            </button>
-          </li>
-        </ul>
-      </header>
-      <!-- ----------------------------------------------- -->
-      <main id="main">
-        <section class="main-section">
-          <div class="diagram-item">
-            <p class="type-title">Нові користувачі</p>
-            <div class="diagram-thumb">
-              <canvas
-                id="newUsers"
-                width="350px"
-                height="240px"
-                class="diagram"
-              ></canvas>
-            </div>
-            <div id="companyName"></div>
-          </div>
-
-          <div class="diagram-item">
-            <p class="type-title">Використані фішки</p>
-            <div class="diagram-thumb">
-              <canvas
-                id="usedTips"
-                width="350px"
-                height="240px"
-                class="diagram"
-              ></canvas>
-            </div>
-            <div id="usedTipsInfo"></div>
-          </div>
-
-          <div class="diagram-item">
-            <p class="type-title">Створені фішки</p>
-            <div class="diagram-thumb">
-              <canvas
-                id="createrdTips"
-                width="350px"
-                height="240px"
-                class="diagram"
-              ></canvas>
-            </div>
-            <div id="createdTipsInfo"></div>
-          </div>
-        </section>
-      </main>
-      <footer class="footer">
-        <p class="footer-text">Завантажити статитстику Excel</p>
-        <button type="button" class="download-btn">
-          <svg width="17" height="16">
-            <use href="./img/down.svg#download-icon"></use>
-          </svg>
-        </button>
-      </footer>
-    </div>
-    <!-- <section>
+    <header class="header">
       <div class="container">
-        <div class="gallery"> -->
-    <!-- Картки зображень -->
-    <!-- </div>
-        <button type="button" class="is-hidden load-more">Load more</button>
+        <div class="cover">
+          <div class="type-btns">
+            <button class="type-btn active" type="button" id="diags">
+              Діаграми
+            </button>
+            <button class="type-btn" type="button" id="tables">Таблиці</button>
+          </div>
+          <ul class="time-btns">
+            <li>
+              <button class="time-btn time-active" type="button">
+                Сьогодні
+              </button>
+            </li>
+            <li><button class="time-btn" type="button">Тиждень</button></li>
+            <li><button class="time-btn" type="button">Місяць</button></li>
+            <li>
+              <button class="calendar-btn" type="button" id="openModalBtn">
+                <svg class="humb-menu" width="16" height="16">
+                  <use href="./img/left-icon.svg#calendar-icon"></use>
+                </svg>
+              </button>
+            </li>
+          </ul>
+        </div>
       </div>
-    </section> -->
+    </header>
+    <!-- ----------------------------------------------- -->
+    <main id="main" class="main">
+      <section class="main-section" id="main-section">
+        <div class="diagram-item">
+          <p class="type-title">Нові користувачі</p>
+          <div class="diagram-thumb">
+            <canvas
+              id="newUsers"
+              width="350px"
+              height="240px"
+              class="diagram"
+            ></canvas>
+          </div>
+          <div id="companyName" class="company-name-cover"></div>
+        </div>
+        <div class="diagram-item">
+          <p class="type-title">Використані фішки</p>
+          <div class="diagram-thumb">
+            <canvas
+              id="usedTips"
+              width="350px"
+              height="240px"
+              class="diagram"
+            ></canvas>
+          </div>
+          <div id="usedTipsInfo" class="company-name-cover"></div>
+        </div>
+        <div class="diagram-item">
+          <p class="type-title">Створені фішки</p>
+          <div class="diagram-thumb">
+            <canvas
+              id="createrdTips"
+              width="350px"
+              height="240px"
+              class="diagram"
+            ></canvas>
+          </div>
+          <div id="createdTipsInfo" class="company-name-cover"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer">
+          <p class="footer-text">Завантажити статитстику Excel</p>
+          <button type="button" class="download-btn">
+            <svg width="17" height="16">
+              <use href="./img/down.svg#download-icon"></use>
+            </svg>
+            <svg width="17" height="16" class="visually-hidden">
+              <use href="./img/do_not_disturb_on.svg#minus"></use>
+            </svg>
+            <svg width="17" height="16" class="visually-hidden">
+              <use href="./img/vector.svg#updown"></use>
+            </svg>
+            <svg width="17" height="16" class="visually-hidden">
+              <use href="./img/add_circle.svg#plus"></use>
+            </svg>
+            <svg width="17" height="16" class="visually-hidden">
+              <use href="./img/group_add.svg#people"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </footer>
+
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="closeModalBtn">&times;</span>
+        <p class="modal-title">Період</p>
+        <form>
+          <label for="" class="modal-text">
+            <span class="input-sub">Початкова дата</span>
+            <input type="date" class="modal-input" />
+          </label>
+          <label for="" class="modal-text">
+            <span class="input-sub">Кінцева дата</span>
+            <input type="date" class="modal-input" />
+          </label>
+          <button class="modal-btn">Показати статистику</button>
+        </form>
+      </div>
+    </div>
     <script type="module" src="./js/index.js"></script>
   </body>
 </html>
