@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Homework 11</title>
+    <title>Project</title>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/modern-normalize@1.1.0/modern-normalize.min.css"
@@ -11,26 +11,89 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <header class="header">
-      <form class="search-form" id="search-form">
-        <input
-          class="search-input"
-          type="text"
-          name="searchQuery"
-          autocomplete="off"
-          placeholder="Search images..."
-        />
-        <button type="submit" class="search-btn">Search</button>
-      </form>
-    </header>
-    <section>
-      <div class="container">
-        <div class="gallery">
-          <!-- Картки зображень -->
+    <div class="container">
+      <header class="header">
+        <div class="type-btns">
+          <button class="type-btn active" type="button" id="diags">
+            Діаграми
+          </button>
+          <button class="type-btn" type="button" id="tables">Таблиці</button>
         </div>
+        <ul class="time-btns">
+          <li>
+            <button class="time-btn time-active" type="button">Сьогодні</button>
+          </li>
+          <li><button class="time-btn" type="button">Тиждень</button></li>
+          <li><button class="time-btn" type="button">Місяць</button></li>
+          <li>
+            <button class="calendar-btn" type="button">
+              <svg class="humb-menu" width="16" height="16">
+                <use href="./img/left-icon.svg#calendar-icon"></use>
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </header>
+      <!-- ----------------------------------------------- -->
+      <main id="main">
+        <section class="main-section">
+          <div class="diagram-item">
+            <p class="type-title">Нові користувачі</p>
+            <div class="diagram-thumb">
+              <canvas
+                id="newUsers"
+                width="350px"
+                height="240px"
+                class="diagram"
+              ></canvas>
+            </div>
+            <div id="companyName"></div>
+          </div>
+
+          <div class="diagram-item">
+            <p class="type-title">Використані фішки</p>
+            <div class="diagram-thumb">
+              <canvas
+                id="usedTips"
+                width="350px"
+                height="240px"
+                class="diagram"
+              ></canvas>
+            </div>
+            <div id="usedTipsInfo"></div>
+          </div>
+
+          <div class="diagram-item">
+            <p class="type-title">Створені фішки</p>
+            <div class="diagram-thumb">
+              <canvas
+                id="createrdTips"
+                width="350px"
+                height="240px"
+                class="diagram"
+              ></canvas>
+            </div>
+            <div id="createdTipsInfo"></div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <p class="footer-text">Завантажити статитстику Excel</p>
+        <button type="button" class="download-btn">
+          <svg width="17" height="16">
+            <use href="./img/down.svg#download-icon"></use>
+          </svg>
+        </button>
+      </footer>
+    </div>
+    <!-- <section>
+      <div class="container">
+        <div class="gallery"> -->
+    <!-- Картки зображень -->
+    <!-- </div>
         <button type="button" class="is-hidden load-more">Load more</button>
       </div>
-    </section>
+    </section> -->
     <script type="module" src="./js/index.js"></script>
   </body>
 </html>

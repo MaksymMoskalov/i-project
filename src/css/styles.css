@@ -1,109 +1,191 @@
 body {
   background-color: white;
 }
-.header {
-  background-color: lightsteelblue;
-  height: 70px;
-}
+
 .container {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-.search-form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 1560px;
+  padding-left: 68px;
+  padding-right: 68px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.search-input {
-  width: 300px;
-  height: 40px;
-  margin-top: 12px;
-
-  border-radius: 4px;
-  border: 1 solid white;
-}
-
-.search-btn {
-  height: 40px;
-  width: 80px;
-  margin-top: 12px;
-  margin-left: 10px;
-  border-radius: 4px;
-  border: 1 solid transparent;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.search-btn:hover {
-  background-color: mediumslateblue;
-  color: aliceblue;
-}
-
-.gallery {
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-.thumb {
-  height: 500px;
-  width: 600px;
-
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.thumb > img {
-  display: block;
-  height: 100%;
-  width: 100%;
-
-  object-fit: cover;
-}
-
-.photo-card {
-  background-color: lightsteelblue;
-  width: 600px;
-
-  border-radius: 10px;
-}
-.info {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-}
-.info-item {
+.header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 148px;
+
+  border-bottom: 2px solid #edf2f7;
 }
 
-.load-more {
-  display: block;
-  margin-top: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 300px;
-  height: 50px;
+.type-btns {
+  margin: 0;
+  padding: 0;
+  margin-top: 16px;
+  margin-bottom: 10px;
+}
+.type-btn {
+  width: 111px;
+  height: 54px;
+  margin-left: -4px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 19px;
+  padding-right: 19px;
 
-  border: 1 solid transparent;
-  border-radius: 5px;
+  border: none;
+  border-bottom: 2px solid #edf2f7;
+  background-color: transparent;
 
-  background-color: lightsteelblue;
+  font-size: 18px;
+  font-weight: 500;
+
+  cursor: pointer;
+}
+.active {
+  color: #2b6cb0;
+  border-color: #2b6cb0;
+}
+.time-btns {
+  display: flex;
+  align-items: center;
+  width: 424px;
+  margin: 0;
+  padding-left: 12px;
+  padding-right: 12px;
+  list-style: none;
+}
+
+.time-btn {
+  width: 111px;
+  height: 52px;
+
+  border: none;
+  background-color: transparent;
+  font-size: 18px;
+  font-weight: 500;
+
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  cursor: pointer;
+}
+
+.time-active {
+  color: white;
+  background-color: #2b6cb0;
+  border-radius: 30px;
+}
+
+.calendar-btn {
+  width: 48px;
+  height: 48px;
+  margin-left: 8px;
+  border: 1px solid #2b6cb0;
+  border-radius: 6px;
+  background-color: transparent;
+  padding: 16px;
+
+  cursor: pointer;
+}
+
+.main-section {
+  display: flex;
+}
+
+.diagram-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 480px;
+}
+
+.diagram-thumb {
+  margin-bottom: 52px;
+}
+
+.type-title {
   font-size: 24px;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 600;
 }
 
-.load-more:hover {
-  background-color: mediumslateblue;
-  color: aliceblue;
+.company-stat {
+  display: flex;
+  width: 351px;
+  justify-content: space-between;
+  margin-bottom: 10px;
 }
 
-.is-hidden {
-  display: none;
+.company-name {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+}
+
+.company-total {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+}
+
+.workers-item {
+  display: flex;
+  width: 351px;
+  justify-content: space-between;
+  margin: 0;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 6px;
+  background-color: #edf2f7;
+  border-radius: 4px;
+}
+
+.workers-item:not(:last-child) {
+  margin-bottom: 12px;
+}
+
+.workers-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.workers-list:not(:last-child) {
+  margin-bottom: 38px;
+}
+
+.company-text {
+  margin: 0;
+  padding: 0;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  height: 80px;
+}
+
+.footer-text {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+.download-btn {
+  width: 40px;
+  height: 40px;
+
+  margin-left: 10px;
+
+  border: 1px solid #2b6cb0;
+  border-radius: 6px;
+  background-color: transparent;
+
+  cursor: pointer;
 }
