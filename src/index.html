@@ -28,12 +28,16 @@
           </div>
           <ul class="time-btns">
             <li>
-              <button class="time-btn time-active" type="button">
+              <button class="time-btn time-active" type="button" id="today">
                 Сьогодні
               </button>
             </li>
-            <li><button class="time-btn" type="button">Тиждень</button></li>
-            <li><button class="time-btn" type="button">Місяць</button></li>
+            <li>
+              <button class="time-btn" type="button" id="week">Тиждень</button>
+            </li>
+            <li>
+              <button class="time-btn" type="button" id="months">Місяць</button>
+            </li>
             <li>
               <button class="calendar-btn" type="button" id="openModalBtn">
                 <svg
@@ -60,6 +64,7 @@
       <section class="main-section" id="main-section">
         <div class="diagram-item">
           <p class="type-title">Нові користувачі</p>
+          <div id="datePeriod"></div>
           <div class="diagram-thumb">
             <canvas
               id="newUsers"
@@ -68,10 +73,12 @@
               class="diagram"
             ></canvas>
           </div>
+
           <div id="companyName" class="company-name-cover"></div>
         </div>
         <div class="diagram-item">
           <p class="type-title">Використані фішки</p>
+          <div id="datePeriodTwo"></div>
           <div class="diagram-thumb">
             <canvas
               id="usedTips"
@@ -84,6 +91,7 @@
         </div>
         <div class="diagram-item">
           <p class="type-title">Створені фішки</p>
+          <div id="datePeriodThre"></div>
           <div class="diagram-thumb">
             <canvas
               id="createrdTips"

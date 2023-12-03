@@ -22,7 +22,8 @@
         "qty_used_chips": 60,
         "qty_created_chips": 70
       }
-    ]
+    ],
+    "dates": { "start_date": 2, "end_date": 4 }
   },
   {
     "location_name": "East Wing",
@@ -47,6 +48,7 @@
         "qty_used_chips": 50,
         "qty_created_chips": 55
       }
-    ]
+    ],
+    "dates": { "start_date": 2, "end_date": 4 }
   }
 ]

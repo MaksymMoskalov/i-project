@@ -25,6 +25,7 @@ const response = [
         qty_created_chips: 70,
       },
     ],
+    dates: { start_date: 2, end_date: 4 },
   },
   {
     location_name: 'East Wing',
@@ -50,11 +51,31 @@ const response = [
         qty_created_chips: 55,
       },
     ],
+    dates: { start_date: 2, end_date: 4 },
   },
 ];
 
 import Chart from 'chart.js/auto';
 
+const colors = [
+  'rgb(237, 100, 166)',
+  'rgb(160, 174, 192)',
+  'rgb(66, 153, 225)',
+  'rgb(237, 137, 54)',
+  'rgb(72, 187, 120)',
+  'rgb(245, 101, 101)',
+  'rgb(159, 122, 234)',
+];
+
+const colorsLight = [
+  'rgba(237, 100, 166, 0.5)',
+  'rgba(160, 174, 192, 0.5)',
+  'rgba(66, 153, 225, 0.5)',
+  'rgba(237, 137, 54, 0.5)',
+  'rgba(72, 187, 120, 0.5)',
+  'rgba(245, 101, 101, 0.5)',
+  'rgba(159, 122, 234, 0.5)',
+];
 const newUserEl = document.getElementById('newUsers').getContext('2d');
 const usedTipsEl = document.getElementById('usedTips').getContext('2d');
 const createdTipsEl = document.getElementById('createrdTips').getContext('2d');
@@ -65,6 +86,38 @@ const mainEl = document.getElementById('main');
 const companyEl = document.getElementById('companyName');
 const usedTipsInfoEl = document.getElementById('usedTipsInfo');
 const createdTipsInfoEl = document.getElementById('createdTipsInfo');
+const dateEl = document.getElementById('datePeriod');
+const dateTwoEl = document.getElementById('datePeriodTwo');
+const dateThreEl = document.getElementById('datePeriodThre');
+
+const todayEl = document.getElementById('today');
+const weekEl = document.getElementById('week');
+const monthsEl = document.getElementById('months');
+todayEl.addEventListener('click', onTodBtn);
+weekEl.addEventListener('click', onWeektn);
+monthsEl.addEventListener('click', onMonthsBtn);
+
+function onTodBtn() {
+  weekEl.classList.remove('time-active');
+  monthsEl.classList.remove('time-active');
+  todayEl.classList.add('time-active');
+}
+function onWeektn() {
+  weekEl.classList.add('time-active');
+  monthsEl.classList.remove('time-active');
+  todayEl.classList.remove('time-active');
+}
+function onMonthsBtn() {
+  weekEl.classList.remove('time-active');
+  monthsEl.classList.add('time-active');
+  todayEl.classList.remove('time-active');
+}
+
+const dateMark = `<p class="diag-date">${response[0].dates.start_date} Грудня - ${response[0].dates.end_date} Грудня</p>`;
+
+dateEl.insertAdjacentHTML('beforeend', dateMark);
+dateTwoEl.insertAdjacentHTML('beforeend', dateMark);
+dateThreEl.insertAdjacentHTML('beforeend', dateMark);
 
 newUserEl.canvas.parentNode.style.width = '350px';
 const nweUserDou = new Chart(newUserEl, {
@@ -79,11 +132,7 @@ const nweUserDou = new Chart(newUserEl, {
         data: response.map(user => {
           return user.main_statistics.qty_new_users;
         }),
-        backgroundColor: [
-          'rgb(255, 99, 132)',
-          'rgb(54, 162, 235)',
-          'rgb(255, 205, 86)',
-        ],
+        backgroundColor: colors,
         hoverOffset: 4,
       },
     ],
@@ -106,11 +155,7 @@ const usedTipsDou = new Chart(usedTipsEl, {
         data: response.map(user => {
           return user.main_statistics.qty_used_chips;
         }),
-        backgroundColor: [
-          'rgb(255, 99, 132)',
-          'rgb(54, 162, 235)',
-          'rgb(255, 205, 86)',
-        ],
+        backgroundColor: colors,
         hoverOffset: 4,
       },
     ],
@@ -134,11 +179,7 @@ const createdTipsDou = new Chart(createdTipsEl, {
         data: response.map(user => {
           return user.main_statistics.qty_created_chips;
         }),
-        backgroundColor: [
-          'rgb(255, 99, 132)',
-          'rgb(54, 162, 235)',
-          'rgb(255, 205, 86)',
-        ],
+        backgroundColor: colors,
         hoverOffset: 4,
       },
     ],
@@ -149,36 +190,40 @@ const createdTipsDou = new Chart(createdTipsEl, {
 });
 
 const newUserMark = response
-  .map(data => {
+  .map((data, index) => {
+    const color = index;
     return `
-    <div class="company-stat-cover">
-    <div class="company-stat">
+      <div class="company-stat-cover">
+        <div class="company-stat" >
           <p class="company-name">${data.location_name}</p>
-           <p class="company-total">${data.main_statistics.qty_new_users}</p>
-           </div>
-           <ul class="workers-list">${data.worker_statistics
-             .map(stat => {
-               return `<li class="workers-item">
-             <p class="company-text">${stat.worker_name}</p>
-           <p class="company-text">${stat.qty_added_worker}</p>
-           </li>`;
-             })
-             .join('')}</ul>
-             </div>`;
+          <p class="company-total">${data.main_statistics.qty_new_users}</p>
+        </div>
+        <ul class="workers-list">${data.worker_statistics
+          .map(stat => {
+            const workerColor = colorsLight[color];
+            return `<li class="workers-item" style="background-color: ${workerColor}">
+                      <p class="company-text">${stat.worker_name}</p>
+                      <p class="company-text">${stat.qty_added_worker}</p>
+                    </li>`;
+          })
+          .join('')}</ul>
+      </div>`;
   })
   .join('');
 
 companyEl.insertAdjacentHTML('beforeend', newUserMark);
 
 const usedTipsMark = response
-  .map(data => {
+  .map((data, index) => {
+    const color = index;
     return `<div class="company-stat-cover"><div class="company-stat">
           <p class="company-name">${data.location_name}</p>
            <p class="company-total">${data.main_statistics.qty_used_chips}</p>
            </div>
            <ul class="workers-list">${data.worker_statistics
              .map(stat => {
-               return `<li class="workers-item">
+               const workerColor = colorsLight[color];
+               return `<li class="workers-item" style="background-color: ${workerColor}">
              <p class="company-text">${stat.worker_name}</p>
            <p class="company-text">${stat.qty_used_chips}</p>
            </li>`;
@@ -189,7 +234,8 @@ const usedTipsMark = response
 usedTipsInfoEl.insertAdjacentHTML('beforeend', usedTipsMark);
 
 const createdTipsMark = response
-  .map(data => {
+  .map((data, index) => {
+    const color = index;
     return `<div class="company-stat-cover"><div class="company-stat">
           <p class="company-name">${data.location_name}</p>
            <p class="company-total">${
@@ -198,7 +244,8 @@ const createdTipsMark = response
            </div>
            <ul class="workers-list">${data.worker_statistics
              .map(stat => {
-               return `<li class="workers-item">
+               const workerColor = colorsLight[color];
+               return `<li class="workers-item" style="background-color: ${workerColor}">
              <p class="company-text">${stat.worker_name}</p>
            <p class="company-text">${stat.qty_created_chips}</p>
            </li>`;
@@ -226,6 +273,9 @@ function onTable(e) {
       <section class="table-section">
       <div class="table-item">
         <h2 class="table-company">${data.location_name}</h2>
+        <p class="table-date">${response[0].dates.start_date} Грудня - ${
+        response[0].dates.end_date
+      } Грудня</p>
         <div class="table-stat-thumb">
         <div class="table-stat-container">
           <div class="table-stat-item-container">

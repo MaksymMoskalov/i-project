@@ -267,7 +267,18 @@ body {
   font-weight: 600;
   line-height: 32px;
   letter-spacing: 0em;
+  margin-bottom: 0;
   text-align: center;
+}
+
+.diag-date {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 20px;
 }
 
 @media screen and (max-width: 425px) {
@@ -401,7 +412,6 @@ body {
 
   margin: 0;
   padding: 0;
-  margin-bottom: 36px;
 }
 
 .table-compan:not(:first-child) {
@@ -554,6 +564,19 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.table-date {
+  padding: 0;
+  margin: 0;
+
+  margin-bottom: 36px;
+
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  text-align: center;
+}
+
 .stat {
   border: none;
   cursor: pointer;
@@ -637,10 +660,6 @@ body {
   font-weight: 700;
   line-height: 28px;
   color: #2d3748;
-}
-
-input[type='date']::-webkit-calendar-picker-indicator {
-  display: none;
 }
 
 .input-sub {
