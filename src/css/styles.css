@@ -1,5 +1,6 @@
 body {
   background-color: white;
+  font-family: 'Inter';
 }
 
 .container {
@@ -261,8 +262,12 @@ body {
 }
 
 .type-title {
+  font-family: Inter;
   font-size: 24px;
   font-weight: 600;
+  line-height: 32px;
+  letter-spacing: 0em;
+  text-align: center;
 }
 
 @media screen and (max-width: 425px) {
@@ -462,6 +467,7 @@ body {
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
+
   width: 319px;
 
   margin: 0;

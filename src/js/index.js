@@ -75,7 +75,7 @@ const nweUserDou = new Chart(newUserEl, {
     }),
     datasets: [
       {
-        label: 'My First Dataset',
+        label: 'Нових користувачів',
         data: response.map(user => {
           return user.main_statistics.qty_new_users;
         }),
@@ -102,7 +102,7 @@ const usedTipsDou = new Chart(usedTipsEl, {
     }),
     datasets: [
       {
-        label: 'My First Dataset',
+        label: 'Використаних фішок',
         data: response.map(user => {
           return user.main_statistics.qty_used_chips;
         }),
@@ -130,7 +130,7 @@ const createdTipsDou = new Chart(createdTipsEl, {
     }),
     datasets: [
       {
-        label: 'My First Dataset',
+        label: 'Створених фішок',
         data: response.map(user => {
           return user.main_statistics.qty_created_chips;
         }),
